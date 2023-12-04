@@ -2,10 +2,13 @@ import streamlit as st
 import pandas as pd
 import sqlite3 as sql
 import matplotlib.pyplot as plt
+import os
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 db_path = "data/Expense"
 
+if not os.path.exists("data"):
+    os.makedirs("data")
 def execution():
 
     date_from = st.date_input("From Date :date:")
