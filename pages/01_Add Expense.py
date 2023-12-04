@@ -1,10 +1,12 @@
 import streamlit as st
 import sqlite3 as sql
 import pandas as pd
-import time
+import time,os
 
 db_name = "data/Expense"
 
+if not os.path.exists("data"):
+    os.makedirs("data")
 values = ["Connecting to the table","Adding the records","Saving","Almost done","Done"]
 c=1
 
