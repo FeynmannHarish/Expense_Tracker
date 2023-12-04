@@ -1,7 +1,11 @@
 import streamlit as st
 import sqlite3 as sql
 import pandas as pd
+import os
 db_name = "data/Expense"
+
+if not os.path.exists("data"):
+    os.makedir("data")
 
 def Clear():
     st.session_state.nam=""
