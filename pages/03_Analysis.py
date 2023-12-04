@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import os
 import sqlite3 as sql
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
@@ -7,6 +8,8 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 db_name = "data/Expense"
 
+if not os.path.exists("data"):
+    os.makedirs("data")
 def execution():
     connection = sql.connect(db_name)
     cursor = connection.cursor()
