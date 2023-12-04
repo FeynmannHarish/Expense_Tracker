@@ -5,7 +5,7 @@ import os
 db_name = "data/Expense"
 
 if not os.path.exists("data"):
-    os.makedir("data")
+    os.makedirs("data")
 
 def Clear():
     st.session_state.nam=""
